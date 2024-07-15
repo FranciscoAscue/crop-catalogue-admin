@@ -1,0 +1,10 @@
+[04-Dec-2023 21:24:53 UTC] PHP Warning:  Undefined variable $conn in /home/foreslab/public_html/index.php on line 3
+[04-Dec-2023 21:24:53 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/foreslab/public_html/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/foreslab/public_html/index.php on line 3
+[04-Dec-2023 21:26:58 UTC] PHP Warning:  Undefined variable $conn in /home/foreslab/public_html/index.php on line 3
+[04-Dec-2023 21:26:58 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/foreslab/public_html/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/foreslab/public_html/index.php on line 3
