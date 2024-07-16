@@ -129,82 +129,104 @@
     </header><!-- End Header -->
 
     <section class="login">
-        <div class="container-fluid px-6 py-5 mx-auto">
-            <div class="row justify-content-center">
-                <div class="col-xl-10 col-lg-8 col-md-8 col-10 text-center">
-    
-                    <div class="card card_ia bg-light">
-                        <h2 class="text-center mb-4 text-secondary">Sistema de recomendación de cultivos</h2>
-                        <form id="recommendationForm" class="form-card" action="{{ route('clones.recommend') }}"
-                            method="POST">
-                            @csrf
-                            <div class="row justify-content-center ">
-                                <div class="form-group col-sm-5 p-1">
-                                    <select class="form-control border-0 shadow-sm m-2 p-2 rounded" id="purpose" name="purpose">
-                                        <option value="" selected disabled>Propósito</option>
-                                        <option value="Agriculture">Agricultura</option>
-                                        <option value="Breeding">Mejoramiento</option>
-                                        <option value="Commercial Sector">Sector Comercial</option>
-                                        <option value="Education">Educación</option>
-                                        <option value="Research">Investigación</option>
-                                    </select>
-                                </div>
+        <div class="container-fluid px-1 py-5 mx-auto">
+            <div class="row d-flex justify-content-center">
+                <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
 
-                                <div class="form-group col-sm-5 p-1">
-                                    <select class="form-control border-0 shadow-sm m-2 p-2 rounded" id="order" name="order">
-                                        <option value="" selected disabled>Criterio de Orden</option>
-                                        <option value="Rendimiento">Rendimiento</option>
-                                        <option value="Materia Seca">Materia Seca</option>
-                                        </select>
-                                </div>
+                    
+
+
+                    <div class="card_ia card bg-light p-2 m-6">
+                        <div class="p-2 row">
+                            <div class="col-10">
+                                <h2 class="text-center mb-4 text-secondary">Cultivos Caracterizados</h2>
                             </div>
-                            <div class="row justify-content-center">
-                                <div class="form-group col-sm-5">
-                                    <label for="quantity">Número de Familias Recomendación</label>
-                                    <input class="form-control border-0 shadow-sm m-2 p-2 rounded text-center" type="number" id="quantity"
-                                        name="quantity" max="10" min="2" value="5" placeholder="Número de Familias Recomendadas">
-                                </div>
+
+                            <div class="col-2">
+                                <a href="{{ route('recommend.system') }}" class="btn btn-secondary btn-lg btn-block shadow-sm rounded-pill">
+                                    <i class="bi bi-arrow-return-left"></i> Regresar</a>
                             </div>
-                            <div class="row justify-content-center">
-                                <div class="form-group col-10">
-                                    <label class="form-control-label px-3">¿Para qué país será el envío?<span
-                                            class="text-danger"> *</span></label>
-                                    <div class="form-group col-12 m-2 p-2">
-                                        <select class="form-control js-example-theme-single" required name="country" id="country">
-                                            @foreach ($countries as $item)
-                                                <option value="{{ $item->country_name }}">{{ $item->country_name }}</option>
-                                            @endforeach
-                                        </select>
+                        </div>
+                        @if ($results && count($results) > 0)
+                        <table class="table table-striped" id="tabla_id">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Cod.</th>
+                                    <th scope="col">Parental Hembra</th>
+                                    <th scope="col">Parental Macho</th>
+                                    <th scope="col">Rendimiento (Tn/Ha)</th>
+                                    <th scope="col">Acciones <i class="bi bi-info-circle me-1"></i></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($results as $item)
+                                    <tr>
+
+                                        <td scope="row">CIP<b>{{ $item->family }}</b>.{{ $item->clone_number }}</td>
+                                        <td scope="row">
+                                            {{ $item->parent_female }}
+                                        </td>
+                                        <td scope="row">
+                                            {{ $item->parent_male }}
+                                        </td>
+                                        <td scope="row">
+                                            {{ $item->tuber_yield }}
+                                        </td>
+                                        <td>
+                                            <a href=" " class="btn btn-primary">
+                                                <i class="bi bi-eye"></i></a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                        @else
+                            <p class="text-warning">No hay familias caracterizadas!!!</p>
+                        @endif
+
+                        <div class="p-2 row">
+                            <div class="col-10">
+                                <h2 class="text-center mb-4 text-secondary">Familias No Caracterizadas</h2>
+                            </div>
+
+                            <div class="col-2">
+                                 
+                            </div>
+                        </div>
+
+
+                        @if ($difference && count($difference) > 0)
+                            <div class="d-flex flex-wrap align-items-center justify-content-center">
+                                @foreach ($difference as $item)
+                                    <div class="p-2 m-2 bg-info">
+                                        <b>{{ htmlspecialchars($item) }}</b>
                                     </div>
-                                </div>
+                                @endforeach
                             </div>
-                            <div class="row justify-content-center">
-                                <div class="form-group col-sm-6 p-4">
-                                    <button type="submit" class="btn btn-primary btn-lg btn-block shadow-sm rounded-pill">Obtener
-                                        Recomendación</button>
-                                </div>
-                            </div>
-                        </form>
+                        @else
+                            <p class="text-warning">No hay familias no caracterizadas.</p>
+                        @endif
+
                     </div>
-    
                 </div>
             </div>
+            <br>
         </div>
     </section>
-    
+
+    <footer id="footer" class="">
+        <div class="container footer-bottom clearfix">
+            <div class="copyright">
+                &copy; Copyright <strong><span>Foreslab</span></strong>. Todos los derechos reservados
+            </div>
+            <div class="credits">
+                Diseñado por el <a href="https://github.com/FranciscoAscue">Equipo Foreslab</a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Select2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <!-- Inicializar Select2 -->
-    <script>
-        $(document).ready(function() {
-            $('.js-example-theme-single').select2({
-                placeholder: "Selecciona un país",
-                allowClear: true
-            });
-        });
-    </script>
-
 
     <!-- Vendor JS Files -->
     <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

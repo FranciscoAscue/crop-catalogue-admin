@@ -129,82 +129,44 @@
     </header><!-- End Header -->
 
     <section class="login">
-        <div class="container-fluid px-6 py-5 mx-auto">
-            <div class="row justify-content-center">
-                <div class="col-xl-10 col-lg-8 col-md-8 col-10 text-center">
-    
-                    <div class="card card_ia bg-light">
-                        <h2 class="text-center mb-4 text-secondary">Sistema de recomendación de cultivos</h2>
-                        <form id="recommendationForm" class="form-card" action="{{ route('clones.recommend') }}"
-                            method="POST">
-                            @csrf
-                            <div class="row justify-content-center ">
-                                <div class="form-group col-sm-5 p-1">
-                                    <select class="form-control border-0 shadow-sm m-2 p-2 rounded" id="purpose" name="purpose">
-                                        <option value="" selected disabled>Propósito</option>
-                                        <option value="Agriculture">Agricultura</option>
-                                        <option value="Breeding">Mejoramiento</option>
-                                        <option value="Commercial Sector">Sector Comercial</option>
-                                        <option value="Education">Educación</option>
-                                        <option value="Research">Investigación</option>
-                                    </select>
-                                </div>
+        <div class="container-fluid px-1 py-5 mx-auto">
+            <div class="row d-flex justify-content-center">
+                <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
 
-                                <div class="form-group col-sm-5 p-1">
-                                    <select class="form-control border-0 shadow-sm m-2 p-2 rounded" id="order" name="order">
-                                        <option value="" selected disabled>Criterio de Orden</option>
-                                        <option value="Rendimiento">Rendimiento</option>
-                                        <option value="Materia Seca">Materia Seca</option>
-                                        </select>
-                                </div>
-                            </div>
-                            <div class="row justify-content-center">
-                                <div class="form-group col-sm-5">
-                                    <label for="quantity">Número de Familias Recomendación</label>
-                                    <input class="form-control border-0 shadow-sm m-2 p-2 rounded text-center" type="number" id="quantity"
-                                        name="quantity" max="10" min="2" value="5" placeholder="Número de Familias Recomendadas">
-                                </div>
-                            </div>
-                            <div class="row justify-content-center">
-                                <div class="form-group col-10">
-                                    <label class="form-control-label px-3">¿Para qué país será el envío?<span
-                                            class="text-danger"> *</span></label>
-                                    <div class="form-group col-12 m-2 p-2">
-                                        <select class="form-control js-example-theme-single" required name="country" id="country">
-                                            @foreach ($countries as $item)
-                                                <option value="{{ $item->country_name }}">{{ $item->country_name }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row justify-content-center">
-                                <div class="form-group col-sm-6 p-4">
-                                    <button type="submit" class="btn btn-primary btn-lg btn-block shadow-sm rounded-pill">Obtener
-                                        Recomendación</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-    
+                    
+                    <div class="card shadow p-3 m-3">
+ 
+                        <div class="photo">
+                          <img src="https://s-media-cache-ak0.pinimg.com/236x/3b/36/ca/3b36ca3afe0fa0fd4984b9eee2e154bb.jpg">
+                        </div>
+                        <div class="description">
+                            <h2></h2>
+                           <h4>{{$foto -> catalogue}} {{$foto -> population_group}}</h4>
+                           <p><b>Parent Female :</b> {{$foto -> parent_female}} &emsp; <b>Parent Male:</b> {{$foto -> parent_male}} </p>
+                          <button>Add to Cart</button>
+                          <button>Wishlist</button>
+                        </div>
+                      </div>
+ 
                 </div>
             </div>
+            <br>
         </div>
     </section>
-    
+
+    <footer id="footer" class="">
+        <div class="container footer-bottom clearfix">
+            <div class="copyright">
+                &copy; Copyright <strong><span>Foreslab</span></strong>. Todos los derechos reservados
+            </div>
+            <div class="credits">
+                Diseñado por el <a href="https://github.com/FranciscoAscue">Equipo Foreslab</a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Select2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <!-- Inicializar Select2 -->
-    <script>
-        $(document).ready(function() {
-            $('.js-example-theme-single').select2({
-                placeholder: "Selecciona un país",
-                allowClear: true
-            });
-        });
-    </script>
-
 
     <!-- Vendor JS Files -->
     <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

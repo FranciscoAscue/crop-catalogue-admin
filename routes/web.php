@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\Auth\EmailVerificacion;
 use App\Http\Controllers\Auth\PasswordRecovery;
+use App\Http\Controllers\CloneController;
 use App\Http\Controllers\RecomendacionController;
-
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,4 +28,7 @@ Route::get('/cambiar-password/{token}', [PasswordRecovery::class, 'edit'])->name
 Route::post('/update-password', [PasswordRecovery::class, 'update'])->name('password.update');
 
 Route::get('/servicios/sistema-de-recomendacion', [RecomendacionController::class, 'index'])-> middleware(['auth','verified'])  -> name("recommend.system");
-Route::get('/servicios/clones-detalles/{id}', [RecomendacionController::class, 'show'])-> middleware(['auth','verified']) -> name("clones.show");
+Route::get('/servicios/sistema-de-recomendacion/clones-detalles', [RecomendacionController::class, 'show'])-> middleware(['auth','verified']) -> name("clones.show");
+
+Route::post('/get-recommendations', [RecomendacionController::class, 'get_recommend'])-> middleware(['auth','verified']) -> name("clones.recommend");
+Route::get('/servicios/sistema-de-recomendacion/item/{id}', [CloneController::class, 'show'])-> middleware(['auth','verified']) -> name("clones.item");

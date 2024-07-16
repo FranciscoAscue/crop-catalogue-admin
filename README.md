@@ -6,35 +6,35 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## Backend Description for the Potato Selection Optimization System
+## Descripción del Backend para el Sistema de Optimización de Selección de Papas
 
-### Platform Overview
-The backend of the platform for optimizing potato selection processes leverages data on the international distribution of clones to develop a recommendation system aimed at reducing selection times. This system uses historical data, including information on potato clone shipments to various countries, morphological characterization, and crop performance parameters to fill in missing information and make informed recommendations.
+### Descripción General de la Plataforma
+El backend de la plataforma para optimizar los procesos de selección de papas utiliza datos sobre la distribución internacional de clones para desarrollar un sistema de recomendación destinado a reducir los tiempos de selección. Este sistema utiliza datos históricos, incluida información sobre envíos de clones de papas a varios países, caracterización morfológica y parámetros de rendimiento del cultivo, para completar información faltante y hacer recomendaciones informadas.
 
-### Backend Architecture
+### Arquitectura del Backend
 
-#### Development Framework and Database
-- **Framework**: The backend is built using Laravel 10, a PHP framework known for its robust and secure web application development capabilities. Laravel facilitates agile development, allowing for rapid iteration and deployment.
-- **Database**: MySQL is used as the database management system. It integrates seamlessly with Laravel, enabling efficient CRUD (Create, Read, Update, Delete) operations. The database stores essential data on potato clones, including shipment history, morphological data, performance parameters, and user information.
+#### Framework de Desarrollo y Base de Datos
+- **Framework**: El backend se construye utilizando Laravel 10, un framework PHP conocido por sus capacidades robustas y seguras para el desarrollo de aplicaciones web. Laravel facilita el desarrollo ágil, permitiendo una rápida iteración y despliegue.
+- **Base de Datos**: Se utiliza MySQL como sistema de gestión de bases de datos. Se integra perfectamente con Laravel, permitiendo operaciones CRUD (Crear, Leer, Actualizar, Eliminar) eficientes. La base de datos almacena datos esenciales sobre clones de papas, incluyendo historial de envíos, datos morfológicos, parámetros de rendimiento e información del usuario.
 
-#### Data Management and Permissions
-- **User Roles**: The system supports different user roles to manage data access and operations:
-  - **Administrator**: Has full control over the platform, including user management.
-  - **Editor**: Can manage and update data on potato clones.
-  - **Viewer**: Can perform advanced searches and maintain a history of queries.
+#### Gestión de Datos y Permisos
+- **Roles de Usuario**: El sistema admite diferentes roles de usuario para gestionar el acceso y las operaciones de datos:
+  - **Administrador**: Tiene control total sobre la plataforma, incluida la gestión de usuarios.
+  - **Editor**: Puede gestionar y actualizar datos sobre los clones de papas.
+  - **Consultor**: Puede realizar búsquedas avanzadas y mantener un historial de consultas.
 
-### Integration and Workflow
-1. **Data Collection**: Gather data on breeding materials, variety releases in different countries, advanced potato clones, and molecular markers.
-2. **Data Storage**: Store all relevant data in MySQL, ensuring efficient access and management through Laravel.
-3. **API Integration**: Integrate the recommendation system as an API, ensuring seamless interaction with the Laravel backend.
+### Integración y Flujo de Trabajo
+1. **Recolección de Datos**: Recopilar datos sobre materiales de reproducción, liberaciones de variedades en diferentes países, clones avanzados de papas y marcadores moleculares.
+2. **Almacenamiento de Datos**: Almacenar todos los datos relevantes en MySQL, asegurando un acceso y gestión eficientes a través de Laravel.
+3. **Integración de API**: Integrar el sistema de recomendación como una API, asegurando una interacción fluida con el backend de Laravel.
 
-### Expected Outcomes
-- An operational recommendation system that significantly reduces material selection time.
-- Comprehensive and accessible online germplasm catalogs.
-- Successful implementation and integration of advanced recommendation methods.
-- Enhanced genetic improvement efficiency and reduced operational costs.
+### Resultados Esperados
+- Un sistema de recomendación operativo que reduce significativamente el tiempo de selección de materiales.
+- Catálogos de germoplasma completos y accesibles en línea.
+- Implementación e integración exitosa de métodos avanzados de recomendación.
+- Mayor eficiencia en la mejora genética y reducción de costos operativos.
 
-### Impact
-- **Researchers and Breeders**: Access to complete and standardized data, facilitating informed decision-making and accelerating the development of new varieties.
-- **Farmers**: Improved germplasm selection, leading to more productive and resilient crops adapted to specific climatic conditions.
-- **Project Managers**: Streamlined search and selection of suitable potato clones, optimizing logistics and material handling processes.
+### Impacto
+- **Investigadores y Mejoradores**: Acceso a datos completos y estandarizados, facilitando la toma de decisiones informadas y acelerando el desarrollo de nuevas variedades.
+- **Agricultores**: Mejora en la selección de germoplasma, lo que lleva a cultivos más productivos y resistentes, adaptados a condiciones climáticas específicas.
+- **Gestores de Proyectos**: Optimización de la búsqueda y selección de clones de papas adecuados, mejorando la logística y el manejo del material.

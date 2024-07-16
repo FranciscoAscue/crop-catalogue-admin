@@ -75,7 +75,7 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto" href="/">Inicio</a></li>
+                    <li><a class="nav-link scrollto" href="/#hero">Inicio</a></li>
                     <li><a class="nav-link scrollto" href="/#about">Nosotros</a></li>
 
                     {{-- <li><a class="nav-link scrollto " href="/blog/">Blog</a></li> --}}
