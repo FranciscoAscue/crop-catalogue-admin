@@ -14,28 +14,28 @@ El backend de la plataforma para optimizar los procesos de selección de papas a
 ### Arquitectura del Backend
 
 #### Framework de Desarrollo y Base de Datos
-- **Framework**: The backend is built using Laravel 10, a PHP framework known for its robust and secure web application development capabilities. Laravel facilitates agile development, allowing for rapid iteration and deployment.
-- **Base de Datos**: MySQL is used as the database management system. It integrates seamlessly with Laravel, enabling efficient CRUD (Create, Read, Update, Delete) operations. The database stores essential data on potato clones, including shipment history, morphological data, performance parameters, and user information.
+- **Framework**: El backend está construido usando Laravel 10, un framework de PHP conocido por sus robustas y seguras capacidades de desarrollo de aplicaciones web. Laravel facilita el desarrollo ágil, permitiendo iteraciones y despliegues rápidos.
+- **Base de Datos**: Se utiliza MySQL como el sistema de gestión de bases de datos. Se integra perfectamente con Laravel, permitiendo operaciones eficientes de CRUD (Crear, Leer, Actualizar, Eliminar). La base de datos almacena datos esenciales sobre clones de papa, incluyendo el historial de envíos, datos morfológicos, parámetros de rendimiento e información de usuarios.
 
 #### Gestión de Datos y Permisos
-- **Roles de Usuario**: The system supports different user roles to manage data access and operations:
-  - **Administrador**: Has full control over the platform, including user management.
-  - **Editor**: Can manage and update data on potato clones.
-  - **Espectador**: Can perform advanced searches and maintain a history of queries.
+- **Roles de Usuario**: El sistema soporta diferentes roles de usuario para gestionar el acceso a los datos y las operaciones:
+  - **Administrador**: Tiene control total sobre la plataforma, incluyendo la gestión de usuarios.
+  - **Editor**: Puede gestionar y actualizar datos sobre clones de papa.
+  - **Espectador**: Puede realizar búsquedas avanzadas y mantener un historial de consultas.
 
 ### Integración y Flujo de Trabajo
-1. **Recopilación de Datos**: Gather data on breeding materials, variety releases in different countries, advanced potato clones, and molecular markers.
-2. **Almacenamiento de Datos**: Store all relevant data in MySQL, ensuring efficient access and management through Laravel.
-3. **Integración de API**: Integrate the recommendation system as an API, ensuring seamless interaction with the Laravel backend.
+1. **Recopilación de Datos**: Recopilar datos sobre materiales de reproducción, liberación de variedades en diferentes países, clones avanzados de papa y marcadores moleculares.
+2. **Almacenamiento de Datos**: Almacenar todos los datos relevantes en MySQL, asegurando un acceso y gestión eficientes a través de Laravel.
+3. **Integración de API**: Integrar el sistema de recomendaciones como una API, asegurando una interacción sin problemas con el backend de Laravel.
 
 ### Resultados Esperados
 
-- An operational recommendation system that significantly reduces material selection time.
-- Comprehensive and accessible online germplasm catalogs.
-- Successful implementation and integration of advanced recommendation methods.
-- Enhanced genetic improvement efficiency and reduced operational costs.
+- Un sistema de recomendaciones operativo que reduzca significativamente el tiempo de selección de materiales.
+- Catálogos de germoplasma completos y accesibles en línea.
+- Implementación e integración exitosas de métodos avanzados de recomendaciones.
+- Mayor eficiencia en la mejora genética y reducción de costos operativos.
 
-### Impact
-- **Researchers and Breeders**: Access to complete and standardized data, facilitating informed decision-making and accelerating the development of new varieties.
-- **Farmers**: Improved germplasm selection, leading to more productive and resilient crops adapted to specific climatic conditions.
-- **Project Managers**: Streamlined search and selection of suitable potato clones, optimizing logistics and material handling processes.
+### Impacto
+- **Investigadores y Mejoradores**: Acceso a datos completos y estandarizados, facilitando la toma de decisiones informadas y acelerando el desarrollo de nuevas variedades.
+- **Agricultores**: Mejora en la selección de germoplasma, llevando a cultivos más productivos y resistentes adaptados a condiciones climáticas específicas.
+- **Project Managers**: Optimización en la búsqueda y selección de clones de papa adecuados, mejorando la logística y los procesos de manejo de materiales.
