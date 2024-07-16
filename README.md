@@ -8,27 +8,28 @@
 
 ## Backend Description for the Potato Selection Optimization System
 
-### Platform Overview
-The backend of the platform for optimizing potato selection processes leverages data on the international distribution of clones to develop a recommendation system aimed at reducing selection times. This system uses historical data, including information on potato clone shipments to various countries, morphological characterization, and crop performance parameters to fill in missing information and make informed recommendations.
+### Descripción General de la Plataforma
+El backend de la plataforma para optimizar los procesos de selección de papas aprovecha los datos sobre la distribución internacional de clones para desarrollar un sistema de recomendaciones que reduce los tiempos de selección. Este sistema utiliza datos históricos, incluyendo información sobre envíos de clones de papa a varios países, caracterización morfológica y parámetros de rendimiento de cultivos para completar información faltante y hacer recomendaciones informadas.
 
-### Backend Architecture
+### Arquitectura del Backend
 
-#### Development Framework and Database
+#### Framework de Desarrollo y Base de Datos
 - **Framework**: The backend is built using Laravel 10, a PHP framework known for its robust and secure web application development capabilities. Laravel facilitates agile development, allowing for rapid iteration and deployment.
-- **Database**: MySQL is used as the database management system. It integrates seamlessly with Laravel, enabling efficient CRUD (Create, Read, Update, Delete) operations. The database stores essential data on potato clones, including shipment history, morphological data, performance parameters, and user information.
+- **Base de Datos**: MySQL is used as the database management system. It integrates seamlessly with Laravel, enabling efficient CRUD (Create, Read, Update, Delete) operations. The database stores essential data on potato clones, including shipment history, morphological data, performance parameters, and user information.
 
-#### Data Management and Permissions
-- **User Roles**: The system supports different user roles to manage data access and operations:
-  - **Administrator**: Has full control over the platform, including user management.
+#### Gestión de Datos y Permisos
+- **Roles de Usuario**: The system supports different user roles to manage data access and operations:
+  - **Administrador**: Has full control over the platform, including user management.
   - **Editor**: Can manage and update data on potato clones.
-  - **Viewer**: Can perform advanced searches and maintain a history of queries.
+  - **Espectador**: Can perform advanced searches and maintain a history of queries.
 
-### Integration and Workflow
-1. **Data Collection**: Gather data on breeding materials, variety releases in different countries, advanced potato clones, and molecular markers.
-2. **Data Storage**: Store all relevant data in MySQL, ensuring efficient access and management through Laravel.
-3. **API Integration**: Integrate the recommendation system as an API, ensuring seamless interaction with the Laravel backend.
+### Integración y Flujo de Trabajo
+1. **Recopilación de Datos**: Gather data on breeding materials, variety releases in different countries, advanced potato clones, and molecular markers.
+2. **Almacenamiento de Datos**: Store all relevant data in MySQL, ensuring efficient access and management through Laravel.
+3. **Integración de API**: Integrate the recommendation system as an API, ensuring seamless interaction with the Laravel backend.
 
-### Expected Outcomes
+### Resultados Esperados
+
 - An operational recommendation system that significantly reduces material selection time.
 - Comprehensive and accessible online germplasm catalogs.
 - Successful implementation and integration of advanced recommendation methods.
