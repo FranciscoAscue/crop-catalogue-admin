@@ -25,37 +25,14 @@
     <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <!-- Template Main CSS File -->
     <link href="/assets/css/style.css" rel="stylesheet">
-
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
     <!--icon for quotes-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
 
     <style>
-        ::placeholder {
-            color: #272020;
-            text-align: center;
-        }
-
-        input {
-            color: #333;
-        }
-
-        .select2-container .select2-selection--single {
-            border: none;
-            box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.1);
-            padding: 0.75rem 1rem;
-            height: auto;
-        }
-
-
-
         .btn-primary {
             background-color: #16df7e;
             border-color: #16df7e;
@@ -67,6 +44,62 @@
         .btn-primary:hover {
             background-color: #6b90b1ff;
             border-color: rgb(241, 236, 236);
+        }
+
+        .photo img {
+            width: 100%;
+            /* Ajusta esto al tamaño deseado */
+            height: auto;
+            /* Mantiene la proporción de la imagen */
+            max-width: 300px;
+            /* Tamaño máximo deseado */
+            border-radius: 10px;
+            /* Opcional: redondea las esquinas */
+        }
+
+
+        .star-rating {
+            direction: rtl;
+            font-size: 30px;
+            color: #ddd;
+            cursor: pointer;
+        }
+
+        .star-rating input {
+            display: none;
+        }
+
+        .star-rating label {
+            font-size: 2em;
+            padding: 0 5px;
+        }
+
+        .rating-star {
+            color: #ffd700;
+        }
+
+        .star-rating label:hover,
+        .star-rating label:hover~label,
+        .star-rating input:checked~label {
+            color: #ffd700;
+        }
+
+        .rating-star {
+            animation: starAppear 0.5s ease-in-out;
+        }
+
+        .link-muted {
+            color: #aaa;
+        }
+
+        .link-muted:hover {
+            color: #1266f1;
+        }
+
+        .fade-out {
+            transition: opacity 5s ease-out, transform 5s ease-out;
+            opacity: 0.5;
+            transform: translateX(-100%);
         }
     </style>
 
@@ -80,7 +113,7 @@
         $user = Auth::user();
     @endphp
 
-    <header id="header" class="fixed-top bg-transparent">
+    <header id="header" class="">
         <div class="container d-flex align-items-center justify-content-between">
 
             <a href="https://test.foreslab.com/" class="logo"><img src="/assets/img/logo2.webp" alt=""
@@ -128,26 +161,31 @@
 
     </header><!-- End Header -->
 
-    <section class="login">
+    <section class="sectionia">
         <div class="container-fluid px-1 py-5 mx-auto">
             <div class="row d-flex justify-content-center">
                 <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
 
-                    
+
                     <div class="card shadow p-3 m-3">
- 
+                        <div class="col-2">
+                            <a href="{{ url()->previous() }}"
+                                class="btn btn-primary btn-lg btn-block shadow-sm rounded-pill">
+                                <i class="bi bi-arrow-return-left"></i></a>
+                        </div>
                         <div class="photo">
-                          <img src="https://s-media-cache-ak0.pinimg.com/236x/3b/36/ca/3b36ca3afe0fa0fd4984b9eee2e154bb.jpg">
+                            <img src="/assets/Fotos/{{ $foto->photo }}">
                         </div>
-                        <div class="description">
+                        <div>
                             <h2></h2>
-                           <h4>{{$foto -> catalogue}} {{$foto -> population_group}}</h4>
-                           <p><b>Parent Female :</b> {{$foto -> parent_female}} &emsp; <b>Parent Male:</b> {{$foto -> parent_male}} </p>
-                          <button>Add to Cart</button>
-                          <button>Wishlist</button>
+                            <h4>{{ $clone->catalogue }} {{ $clone->population_group }}</h4>
+                            <p><b>Parent Female :</b> {{ $clone->parent_female }} &emsp; <b>Parent Male:</b>
+                                {{ $clone->parent_male }} </p>
+                            <button class="btn btn-success">Add to shipment</button>
+                            <button id="activarAlerta" class="btn btn-warning"><i class="bi bi-star"></i></button>
                         </div>
-                      </div>
- 
+                    </div>
+
                 </div>
             </div>
             <br>
@@ -164,13 +202,63 @@
             </div>
         </div>
     </footer><!-- End Footer -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Select2 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-    <!-- Vendor JS Files -->
+    <script>
+        document.getElementById('activarAlerta').addEventListener('click', function() {
+            Swal.fire({
+                title: "Califica esta Acession (Clone)",
+                html: `
+                <div class="star-rating">
+                    <input type="radio" id="5-stars" name="rating" value="5" />
+                    <label for="5-stars" class="star">&#9733;</label>
+                    <input type="radio" id="4-stars" name="rating" value="4" />
+                    <label for="4-stars" class="star">&#9733;</label>
+                    <input type="radio" id="3-stars" name="rating" value="3" />
+                    <label for="3-stars" class="star">&#9733;</label>
+                    <input type="radio" id="2-stars" name="rating" value="2" />
+                    <label for="2-stars" class="star">&#9733;</label>
+                    <input type="radio" id="1-star" name="rating" value="1" />
+                    <label for="1-star" class="star">&#9733;</label>
+                </div>
+                `,
+                showCancelButton: true,
+                confirmButtonText: 'Enviar calificación',
+                preConfirm: () => {
+                    let rating = document.querySelector('input[name="rating"]:checked').value;
+                    return rating;
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    fetch(`/stars/{{ $user->id }}/{{ $clone->id }}`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                            },
+                            body: JSON.stringify({
+                                rating: result.value
+                            })
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            const starsSection = document.getElementById('activarAlerta');
+                            // Eliminar el contenido existente y agregar un icono de check
+                            starsSection.innerHTML = '&#10003;'; // Código Unicode para el check mark
+                            // Cambiar el color y estilo del botón si es necesario
+                            starsSection.style.backgroundColor = '#4CAF50'; // Verde para indicar éxito
+                            starsSection.style.color = '#fff'; // Texto blanco
+                        })
+                        .catch(error => {
+                            Swal.fire('Error', 'No se pudo enviar la calificación', 'error');
+                        });
+                }
+            });
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
 
     <!-- Template Main JS File -->
     <script src="/assets/js/main.js"></script>

@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class CloneCharacteristic extends Model
 {
     use HasFactory;
+
+
+    public function clon()
+    {
+        return $this->belongsTo(Clon::class);
+    }
 }

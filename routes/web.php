@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\EmailVerificacion;
 use App\Http\Controllers\Auth\PasswordRecovery;
 use App\Http\Controllers\CloneController;
 use App\Http\Controllers\RecomendacionController;
+use App\Http\Controllers\ReviewController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,3 +33,5 @@ Route::get('/servicios/sistema-de-recomendacion/clones-detalles', [Recomendacion
 
 Route::post('/get-recommendations', [RecomendacionController::class, 'get_recommend'])-> middleware(['auth','verified']) -> name("clones.recommend");
 Route::get('/servicios/sistema-de-recomendacion/item/{id}', [CloneController::class, 'show'])-> middleware(['auth','verified']) -> name("clones.item");
+
+Route::post('/stars/{user}/{clone}', [ReviewController::class, 'star'])-> middleware(['auth', 'verified']) -> name("clones.star");

@@ -10,8 +10,8 @@ class CloneController extends Controller
 {
     public function show($id)
     {
-        $foto = Clon::find($id);
-        
-        return view('System.item', compact('foto'));
+        $clone = Clon::find($id);        
+        $foto = $clone->cloneCharacteristics()->random();;
+        return view('System.item', compact('clone','foto'));
     }
 }

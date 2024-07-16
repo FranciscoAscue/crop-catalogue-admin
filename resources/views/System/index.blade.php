@@ -80,7 +80,7 @@
         $user = Auth::user();
     @endphp
 
-    <header id="header" class="fixed-top bg-transparent">
+    <header id="header" class=" bg-transparent">
         <div class="container d-flex align-items-center justify-content-between">
 
             <a href="https://test.foreslab.com/" class="logo"><img src="/assets/img/logo2.webp" alt=""
@@ -170,7 +170,7 @@
                                     <label class="form-control-label px-3">¿Para qué país será el envío?<span
                                             class="text-danger"> *</span></label>
                                     <div class="form-group col-12 m-2 p-2">
-                                        <select class="form-control js-example-theme-single" required name="country" id="country">
+                                        <select class="col-xl-12 col-lg-12 col-md-8 col-sm-6 js-example-theme-single" required name="country" id="country">
                                             @foreach ($countries as $item)
                                                 <option value="{{ $item->country_name }}">{{ $item->country_name }}</option>
                                             @endforeach
@@ -180,8 +180,7 @@
                             </div>
                             <div class="row justify-content-center">
                                 <div class="form-group col-sm-6 p-4">
-                                    <button type="submit" class="btn btn-primary btn-lg btn-block shadow-sm rounded-pill">Obtener
-                                        Recomendación</button>
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block shadow-sm rounded-pill">Recomendación</button>
                                 </div>
                             </div>
                         </form>
@@ -191,6 +190,17 @@
             </div>
         </div>
     </section>
+    
+    <footer id="footer" class="">
+        <div class="container footer-bottom clearfix">
+            <div class="copyright">
+                &copy; Copyright <strong><span>Foreslab</span></strong>. Todos los derechos reservados
+            </div>
+            <div class="credits">
+                Diseñado por el <a href="https://github.com/FranciscoAscue">Equipo Foreslab</a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Select2 JS -->

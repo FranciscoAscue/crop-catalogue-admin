@@ -220,10 +220,16 @@ h6 span{
 .login {
   width: 100%;
   height: 100vh;
-  padding-top: 82px;
+  padding-top: 52px;
   background: url("/assets/img/scattered-forcefields3.webp");
 }
 
+.sectionia {
+  width: 100%;
+  height: 100%;
+  padding-top: 32px;
+  background: url("/assets/img/scattered-forcefields3.webp");
+}
 
 
   
@@ -1257,13 +1263,7 @@ textarea:focus {
   outline-width: 0;
   font-weight: 400;
 }
-.btn-block {
-  text-transform: uppercase;
-  font-size: 15px !important;
-  font-weight: 400;
-  height: 43px;
-  cursor: pointer;
-}
+ 
 .btn-block:hover {
   color: #fff !important;
 }

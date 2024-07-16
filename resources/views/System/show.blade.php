@@ -25,9 +25,7 @@
     <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+     
 
     <!-- Template Main CSS File -->
     <link href="/assets/css/style.css" rel="stylesheet">
@@ -80,7 +78,7 @@
         $user = Auth::user();
     @endphp
 
-    <header id="header" class="fixed-top bg-transparent">
+    <header id="header" class="bg-transparent">
         <div class="container d-flex align-items-center justify-content-between">
 
             <a href="https://test.foreslab.com/" class="logo"><img src="/assets/img/logo2.webp" alt=""
@@ -128,14 +126,10 @@
 
     </header><!-- End Header -->
 
-    <section class="login">
+    <section class="sectionia">
         <div class="container-fluid px-1 py-5 mx-auto">
             <div class="row d-flex justify-content-center">
                 <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-
-                    
-
-
                     <div class="card_ia card bg-light p-2 m-6">
                         <div class="p-2 row">
                             <div class="col-10">
@@ -143,8 +137,8 @@
                             </div>
 
                             <div class="col-2">
-                                <a href="{{ route('recommend.system') }}" class="btn btn-secondary btn-lg btn-block shadow-sm rounded-pill">
-                                    <i class="bi bi-arrow-return-left"></i> Regresar</a>
+                                <a href="{{ route('recommend.system') }}" class="btn btn-primary btn-lg btn-block shadow-sm rounded-pill">
+                                    <i class="bi bi-arrow-return-left"></i></a>
                             </div>
                         </div>
                         @if ($results && count($results) > 0)
@@ -173,7 +167,7 @@
                                             {{ $item->tuber_yield }}
                                         </td>
                                         <td>
-                                            <a href=" " class="btn btn-primary">
+                                            <a href="{{ route('clones.item',$item -> id)}}" class="btn btn-primary">
                                                 <i class="bi bi-eye"></i></a>
                                         </td>
                                     </tr>
@@ -185,11 +179,11 @@
                         @endif
 
                         <div class="p-2 row">
-                            <div class="col-10">
+                            <div class="col-11">
                                 <h2 class="text-center mb-4 text-secondary">Familias No Caracterizadas</h2>
                             </div>
 
-                            <div class="col-2">
+                            <div class="col-1">
                                  
                             </div>
                         </div>
@@ -198,7 +192,7 @@
                         @if ($difference && count($difference) > 0)
                             <div class="d-flex flex-wrap align-items-center justify-content-center">
                                 @foreach ($difference as $item)
-                                    <div class="p-2 m-2 bg-info">
+                                    <div class="p-2 m-2 bg-info rounded">
                                         <b>{{ htmlspecialchars($item) }}</b>
                                     </div>
                                 @endforeach
