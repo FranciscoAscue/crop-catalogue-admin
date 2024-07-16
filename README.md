@@ -9,16 +9,13 @@
 ## Descripción del Backend para el Sistema de Optimización de Selección de Papas
 
 ### Descripción General de la Plataforma
-<<<<<<< HEAD
-El backend de la plataforma para optimizar los procesos de selección de papas utiliza datos sobre la distribución internacional de clones para desarrollar un sistema de recomendación destinado a reducir los tiempos de selección. Este sistema utiliza datos históricos, incluida información sobre envíos de clones de papas a varios países, caracterización morfológica y parámetros de rendimiento del cultivo, para completar información faltante y hacer recomendaciones informadas.
-=======
-El backend de la plataforma para optimizar los procesos de selección de papas aprovecha los datos sobre la distribución internacional de clones para desarrollar un sistema de recomendaciones que reduce los tiempos de selección. Este sistema utiliza datos históricos, incluyendo información sobre envíos de clones de papa a varios países, caracterización morfológica y parámetros de rendimiento de cultivos para completar información faltante y hacer recomendaciones informadas.
->>>>>>> 3a162daafc1095015694ea3cd03874557db37c35
 
-### Arquitectura del Backend
+El backend de la plataforma para optimizar los procesos de selección de papas aprovecha los datos sobre la distribución internacional de clones para desarrollar un sistema de recomendaciones que reduce los tiempos de selección. Este sistema utiliza datos históricos, incluyendo información sobre envíos de clones de papa a varios países, caracterización morfológica y parámetros de rendimiento de cultivos para completar información faltante y hacer recomendaciones informadas.
+
+Arquitectura del Backend
 
 #### Framework de Desarrollo y Base de Datos
-<<<<<<< HEAD
+
 - **Framework**: El backend se construye utilizando Laravel 10, un framework PHP conocido por sus capacidades robustas y seguras para el desarrollo de aplicaciones web. Laravel facilita el desarrollo ágil, permitiendo una rápida iteración y despliegue.
 - **Base de Datos**: Se utiliza MySQL como sistema de gestión de bases de datos. Se integra perfectamente con Laravel, permitiendo operaciones CRUD (Crear, Leer, Actualizar, Eliminar) eficientes. La base de datos almacena datos esenciales sobre clones de papas, incluyendo historial de envíos, datos morfológicos, parámetros de rendimiento e información del usuario.
 
@@ -69,4 +66,3 @@ El backend de la plataforma para optimizar los procesos de selección de papas a
 - **Investigadores y Mejoradores**: Acceso a datos completos y estandarizados, facilitando la toma de decisiones informadas y acelerando el desarrollo de nuevas variedades.
 - **Agricultores**: Mejora en la selección de germoplasma, llevando a cultivos más productivos y resistentes adaptados a condiciones climáticas específicas.
 - **Project Managers**: Optimización en la búsqueda y selección de clones de papa adecuados, mejorando la logística y los procesos de manejo de materiales.
->>>>>>> 3a162daafc1095015694ea3cd03874557db37c35
